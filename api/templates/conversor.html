@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    <form method="POST">
+        <label for="valor">Digite o valor a ser convertido:</label>
+        <input type="number" name="valor" step="0.01" required>
+        
+        <label for="moeda_origem">Selecione a moeda de origem:</label>
+        <select name="moeda_origem" required>
+            <option value="USD">USD</option>
+            <option value="BRL">BRL</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+        </select>
+        
+        <label for="moeda_destino">Selecione a moeda de destino:</label>
+        <select name="moeda_destino" required>
+            <option value="USD">USD</option>
+            <option value="BRL">BRL</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+        </select>
+        <br>
+        <input type="submit" value="Converter">
+    </form>
+
+    {% if valor_convertido %}
+        <p>O valor convertido é: {{ valor_convertido }} {{ moeda_destino }}</p>
+    {% endif %}
+
+    {% if mensagem %}
+        <p>{{ mensagem }}</p>
+    {% endif %}
+</body>
+</html>

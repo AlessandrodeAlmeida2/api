@@ -44,3 +44,18 @@ p {
     text-align: center;
     padding: 20px 0;
 }
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    label, input, select {
+        font-size: 0.9em;
+    }
+}

@@ -22,9 +22,9 @@ def conversor_moedas():
             taxa_cambio = data["rates"][moeda_destino]
             valor_convertido = round(valor * taxa_cambio, 2)
 
-            return render_template("conversor.html", valor_convertido=valor_convertido, moeda_destino=moeda_destino)
+            return render_template("index.html", valor_convertido=valor_convertido, moeda_destino=moeda_destino)
 
-    return render_template("conversor.html")
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
